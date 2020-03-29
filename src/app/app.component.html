@@ -1,0 +1,48 @@
+<!-- 
+<h1 style="text-align: center">Welcome</h1>
+<div style="text-align:center;">
+  <form>
+    <label><input type="radio" value="Employee" [(ngModel)]="rdoEvent.color" [ngModelOptions]="{standalone: true}">Employee</label>
+   
+    <label><input type="radio" value="Admin" [(ngModel)]="rdoEvent.color" [ngModelOptions]="{standalone: true}" >Admin</label>
+    
+    <label><input type="radio" value="Customer" [(ngModel)]="rdoEvent.color" [ngModelOptions]="{standalone: true}">Customer</label>
+    
+    
+    </form>
+    <br>
+    <br>
+    <div>
+      
+      <div *ngIf ="rdoEvent.color=='Employee'">
+        <login></login>
+      </div>
+      <div *ngIf ="rdoEvent.color=='Admin'">
+          <login></login>
+          <input type="text" placeholder="Pin in text box" [hidden]=tval/>
+      </div>
+      <div *ngIf ="rdoEvent.color=='Customer'">
+          <login>
+
+          </login>
+          <input type="text" placeholder="Enter OTP "/>
+      </div>
+    </div>
+    
+</div> -->
+
+
+
+<app-form-demo></app-form-demo>
+
+
+<h2>Move the mouse to see the text field</h2>
+
+  <body (mousemove)="mouseMove()">
+    <label>Mytext</label>
+  </body>
+  <div>
+  <input type="text" [hidden]="txtVal">
+  </div>
+
+

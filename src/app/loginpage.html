@@ -1,0 +1,87 @@
+
+ <h1>Welcome</h1>
+<div style="text-align:center;">
+  <form>
+    <label><input type="radio" (click)="display1()" >Employee</label>
+   
+    <label><input type="radio" (click)="display2()" >Admin</label>
+    
+    <label><input type="radio" (click)="display3()"  >Customer</label>
+    
+    
+<br>
+<br>
+<br>
+<br>
+
+
+<form [formGroup]="newForm" class="loginbox">
+    <div>
+        <div [hidden]="dispName">
+                <label>Name :</label>
+                <input type="text" formControlName="Name">
+                <div *ngIf="newForm.controls['Name'].hasError('required')">
+                Please Enter a name
+                </div>
+        </div>
+        
+        <div [hidden]="dispPsw">
+        <label>Password :</label>
+        <input type="password" formControlName="Password">
+        <div *ngIf="newForm.controls['Password'].hasError('required')">
+            Please Enter your password
+        </div>
+        </div>
+        <div [hidden]="dispOtp">
+            <label>Enter OTP :</label>
+            <input type="text" formControlName="OtpText" >
+            <div *ngIf="newForm.controls['OtpText'].hasError('required')">
+                Please Enter OTP
+            </div>
+        </div>
+        <input type="button" value="Login" [hidden]="dispBtn">
+
+    </div>
+</form> 
+<br>
+<br>
+<br>
+<h2> Test Validations</h2>
+<form [formGroup]="validateForm">
+<div>
+    <label>First Name :</label>
+    <input type="text" formControlName="FirstName">
+    <div *ngIf="validateForm.controls['FirstName'].hasError('required')">
+        Please Enter your First Name.
+    </div>
+    <div *ngIf="validateForm.controls['FirstName'].hasError('minLength')">
+            Please enter valid Name.Minimum Lenth of name should be 4.
+    </div>
+    <div *ngIf="validateForm.controls['FirstName'].hasError('maxLength')">
+            Please Enter Valid Name. Maximun length of name should be 8.
+    </div>
+</div>
+<div>
+        <label>Last Name :</label>
+        <input type="text" formControlName="LastName">
+        <div *ngIf="validateForm.controls['LastName'].hasError('required')">
+            Please Enter your First Name.
+        </div>
+        <div *ngIf="validateForm.controls['LastName'].hasError('minLength')">
+                Please enter valid Name.Minimum Lenth of name should be 4.
+        </div>
+        <div *ngIf="validateForm.controls['LastName'].hasError('maxLength')">
+                Please Enter Valid Name. Maximun length of name should be 8.
+        </div>
+    </div>
+
+</form>
+
+   
+   
+
+
+
+
+
+
